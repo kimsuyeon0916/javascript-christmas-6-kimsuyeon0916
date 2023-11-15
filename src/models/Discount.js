@@ -27,7 +27,9 @@ class Discount {
     if (date <= DATE.christmas) {
       const amount = DISCOUNT.unit + (date - 1) * DISCOUNT.increase;
 
-      this.#discount.set("크리스마스 디데이 할인", amount);
+      if (amount !== 0) {
+        this.#discount.set("크리스마스 디데이 할인", amount);
+      }
     }
   }
 
@@ -38,8 +40,11 @@ class Discount {
         dessert.includes(menu)
       );
       const count = dessertOrder.reduce((sum, [, number]) => sum + number, 0);
+      const amount = count * DISCOUNT.year;
 
-      this.#discount.set("평일 할인", count * DISCOUNT.year);
+      if (amount !== 0) {
+        this.#discount.set("평일 할인", amount);
+      }
     }
   }
 
@@ -50,8 +55,11 @@ class Discount {
         main.includes(menu)
       );
       const count = mainOrder.reduce((sum, [, number]) => sum + number, 0);
+      const amount = count * DISCOUNT.year;
 
-      this.#discount.set("주말 할인", count * DISCOUNT.year);
+      if (amount !== 0) {
+        this.#discount.set("주말 할인", amount);
+      }
     }
   }
 
