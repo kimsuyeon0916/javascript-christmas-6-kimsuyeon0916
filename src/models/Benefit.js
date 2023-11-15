@@ -1,4 +1,4 @@
-import { COST_CRITERIA } from "../utils/Constants.js";
+import { COST_CRITERIA, GIVEAWAY } from "../utils/Constants.js";
 
 class Benefit {
   #benefit;
@@ -28,7 +28,7 @@ class Benefit {
   calculateGiveaway(cost) {
     if (cost >= COST_CRITERIA.giveaway) {
       this.#benefit.set("증정 이벤트", -25000);
-      this.#giveaway = "샴페인";
+      this.#giveaway = GIVEAWAY.menu;
     }
   }
 }

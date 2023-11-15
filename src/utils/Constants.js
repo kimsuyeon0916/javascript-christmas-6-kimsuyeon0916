@@ -44,6 +44,11 @@ const DISCOUNT = Object.freeze({
   increase: -100,
 });
 
+const GIVEAWAY = Object.freeze({
+  menu: "샴페인",
+  discount: -25000,
+});
+
 const MENU = Object.freeze(
   new Map([
     [
@@ -108,6 +113,7 @@ export {
   DATE,
   COST_CRITERIA,
   DISCOUNT,
+  GIVEAWAY,
   MENU,
   BADGE,
   BADGE_CRITERIA,
